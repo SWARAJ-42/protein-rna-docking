@@ -121,25 +121,35 @@ for col in length_cols:
     if col in df.columns:
         df[f"{col}_bin"] = bin_numeric(df[col], bins=5, labels=[1,2,3,4,5])
 
-# === STEP 4: Handle categorical features ===
+# === STEP 4: Handle binary target candidate features ===
+binary_features = [
+    "Binding_affinity",
+]
+for col in binary_features:
+    if col in df.columns:
+        df[col] = df[col].map({'yes': 1, 'no': 0}).fillna(df[col]).astype(int)
+
+# === STEP 5: Handle categorical features ===
 # Identify high-cardinality vs low-cardinality
 categorical_cols = [
     "C_chain_PR","C_RNA_source_organism","U_RNA_macromolecule_name","U_RNA_structure_title",
     "U_RNA_PDB","C_RNA_chain","C_pro_chain","U_RNA_resolution","supp_U_pro_chain",
     "U_PRO_chain","U_RNA_chain","U_RNA_source_organism","Flexible_class",
-    "Structural_class","Docking_case","Binding_affinity"
+    "Structural_class","Docking_case"
 ]
 
 low_cardinality_cols = [c for c in categorical_cols if df[c].nunique() <= high_cardinality_threshold]
 high_cardinality_cols = [c for c in categorical_cols if df[c].nunique() > high_cardinality_threshold]
 
-# 4a. Cluster high-cardinality categorical features
+# 5a. Cluster high-cardinality categorical features
 for col in high_cardinality_cols:
     df[f"{col}_cluster"] = cluster_categorical(df[col], n_clusters=5)
 
-# 4b. One-hot encode low-cardinality categorical features
+# 5b. One-hot encode low-cardinality categorical features
 df[low_cardinality_cols] = df[low_cardinality_cols].astype(str).fillna("None")
 df = pd.get_dummies(df, columns=low_cardinality_cols, prefix=low_cardinality_cols)
+bool_cols = df.select_dtypes(include='bool').columns
+df[bool_cols] = df[bool_cols].astype(int)
 
 # === STEP 6: Remove unnecessary string columns safely ===
 # Remove original categorical columns that were clustered or one-hot encoded
@@ -157,7 +167,7 @@ string_cols_to_remove = [
 columns_to_remove = [col for col in categorical_cols if col in df.columns] + string_cols_to_remove  # all original categorical columns
 df.drop(columns=columns_to_remove, inplace=True)
 
-# === STEP 5: Save processed dataset ===
+# === STEP 7: Save processed dataset ===
 df.to_json(output_path, orient="records", indent=4)
 print(f"Processed dataset saved to {output_path}")
 
