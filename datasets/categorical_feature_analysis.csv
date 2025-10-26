@@ -1,0 +1,27 @@
+feature,n_unique,most_common_value,most_common_count,percent_unique
+C_PDB,197,1ASY,1,100.0
+C_structure_title,197,CLASS II AMINOACYL TRANSFER RNA SYNTHETASES: CRYSTAL STRUCTURE OF YEAST ASPARTYL,1,100.0
+C_pro_name,197,‎S. cerevisiae aspartyl-tRNA synthetase,1,100.0
+U_pro_PDB,187,None,10,94.92
+U_pro_structure_title,187,None,10,94.92
+U_pro_macromolecule_name,178,None,10,90.36
+C_RNA_name,144,dsRNA,10,73.1
+U_pro_source_organism,93,Homo sapiens,45,47.21
+C_pro_source_organism,87,Homo sapiens,47,44.16
+U_pro_resolution,86,NMR,14,43.65
+C_chain_PR,68,A:B,46,34.52
+C_RNA_source_organism,38,None,84,19.29
+U_RNA_macromolecule_name,35,None,160,17.77
+U_RNA_structure_title,35,None,160,17.77
+U_RNA_PDB,35,None,160,17.77
+C_RNA_chain,33,B,51,16.75
+C_pro_chain,22,A,128,11.17
+U_RNA_resolution,19,None,160,9.64
+supp_U_pro_chain,17,A,134,8.63
+U_PRO_chain,16,A,134,8.12
+U_RNA_chain,10,None,160,5.08
+U_RNA_source_organism,10,None,177,5.08
+Flexible_class,4,R,117,2.03
+Structural_class,4,D,86,2.03
+Docking_case,3,UB,160,1.52
+Binding_affinity,2,yes,105,1.02

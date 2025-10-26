@@ -25,6 +25,16 @@ def safe_eval_arithmetic(value):
                 return None
     return None
 
+def strip_string_fields(df):
+    """
+    Strip leading and trailing spaces from all string fields in the DataFrame.
+    This helps clean inconsistent inputs like '  Homo sapiens ' -> 'Homo sapiens'.
+    """
+    df = df.copy()
+    for col in df.columns:
+        if df[col].dtype == object:
+            df[col] = df[col].apply(lambda x: x.strip() if isinstance(x, str) else x)
+    return df
 
 def preprocess_structure_data(df):
     """
@@ -34,12 +44,14 @@ def preprocess_structure_data(df):
     """
     df = df.copy()
 
+    df = strip_string_fields(df)
+
     # Fields that may contain arithmetic expressions
     numeric_fields = [
         "rcsbpdb_C_RNA_length", "C_RNA_seq_full_length", "C_RNA_seq_length",
         "rcsbpdb_U_pro_seq_length", "U_pro_seq_full_length", "U_pro_seq_length",
         "rcsbpdb__U_RNA_seq_length", "U_RNA_seq_full_length", "U_RNA_seq_length",
-        "C_pro_seq_full_length", "C_pro_seq_length"
+        "C_pro_seq_full_length", "C_pro_seq_length", "rcsbpdb_C_pro_seq_length"
     ]
 
     for col in numeric_fields:
