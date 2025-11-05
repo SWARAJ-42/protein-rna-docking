@@ -4,7 +4,7 @@ import ast
 import argparse
 import json
 import os
-
+import numpy as np
 
 def safe_eval_arithmetic(value):
     """
@@ -25,10 +25,10 @@ def safe_eval_arithmetic(value):
                 return None
     return None
 
+
 def strip_string_fields(df):
     """
     Strip leading and trailing spaces from all string fields in the DataFrame.
-    This helps clean inconsistent inputs like '  Homo sapiens ' -> 'Homo sapiens'.
     """
     df = df.copy()
     for col in df.columns:
@@ -36,14 +36,38 @@ def strip_string_fields(df):
             df[col] = df[col].apply(lambda x: x.strip() if isinstance(x, str) else x)
     return df
 
+
+def clean_resolution(value):
+    """
+    Convert resolution field values:
+    - 'NMR' (any case) → None
+    - valid float-like strings → float
+    - others → None
+    """
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return None
+    if isinstance(value, str):
+        val = value.strip().upper()
+        if val == "NMR":
+            return None
+        # try parsing as float
+        try:
+            return float(val)
+        except ValueError:
+            return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    return None
+
+
 def preprocess_structure_data(df):
     """
     Preprocess the structural dataset:
     - Fix arithmetic-like numeric strings
+    - Clean resolution fields
     - Add derived biological features
     """
     df = df.copy()
-
     df = strip_string_fields(df)
 
     # Fields that may contain arithmetic expressions
@@ -58,13 +82,17 @@ def preprocess_structure_data(df):
         if col in df.columns:
             df[col] = df[col].apply(safe_eval_arithmetic)
 
+    # Clean resolution fields (NMR -> None, others -> float)
+    resolution_fields = ["C_resolution", "U_pro_resolution", "U_RNA_resolution"]
+    for col in resolution_fields:
+        if col in df.columns:
+            df[col] = df[col].apply(clean_resolution)
+
     # Derived binary/categorical features
     df["has_tRNA"] = df["C_RNA_name"].fillna("").str.contains("tRNA", case=False).astype(int)
     df["has_dsRNA"] = df["C_RNA_name"].fillna("").str.contains("dsRNA", case=False).astype(int)
-    df["has_RNA"] = df["C_RNA_name"].notna().astype(int)
-    df["has_RNA_source"] = df["C_RNA_source_organism"].notna().astype(int)
     df["organism_match"] = (df["C_pro_source_organism"] == df["C_RNA_source_organism"]).astype(int)
-    df["is_NMR_structure"] = df["U_pro_resolution"].astype(str).str.upper().eq("NMR").astype(int)
+    df["is_NMR_structure"] = df["U_pro_resolution"].isna().astype(int)  # Now NMR gives null, so detect via NaN
 
     # RNA chain count (number of chain letters, e.g., "DE" -> 2)
     df["RNA_chain_count"] = df["C_RNA_chain"].fillna("").apply(lambda x: len(x.strip()))
@@ -74,17 +102,9 @@ def preprocess_structure_data(df):
     df["RNA_seq_missing"] = df["C_RNA_seq_full_length"] - df["C_RNA_seq_length"]
 
     # Average resolution across available numeric ones
-    def avg_res(row):
-        vals = []
-        for col in ["C_resolution", "U_pro_resolution", "U_RNA_resolution"]:
-            try:
-                v = float(row[col])
-                vals.append(v)
-            except Exception:
-                continue
-        return sum(vals)/len(vals) if vals else None
-
-    df["avg_resolution"] = df.apply(avg_res, axis=1)
+    df["avg_resolution"] = df[resolution_fields].apply(
+        lambda row: np.nanmean([v for v in row if isinstance(v, (int, float))]), axis=1
+    )
 
     return df
 
