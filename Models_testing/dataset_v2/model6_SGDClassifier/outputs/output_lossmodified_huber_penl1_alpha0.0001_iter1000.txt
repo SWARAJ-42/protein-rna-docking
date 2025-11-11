@@ -1,0 +1,26 @@
+=== SGDClassifier Training Summary ===
+
+Model Settings:
+loss: modified_huber
+penalty: l1
+alpha: 0.0001
+max_iter: 1000
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.7000
+Precision: 0.7143
+Recall: 0.7143
+F1_Score: 0.7143
+ROC_AUC: 0.7494
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.6842    0.6842    0.6842        19
+           1     0.7143    0.7143    0.7143        21
+
+    accuracy                         0.7000        40
+   macro avg     0.6992    0.6992    0.6992        40
+weighted avg     0.7000    0.7000    0.7000        40

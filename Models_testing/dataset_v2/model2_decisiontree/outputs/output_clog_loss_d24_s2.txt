@@ -1,0 +1,25 @@
+=== DecisionTreeClassifier Training Summary ===
+
+Model Settings:
+criterion: log_loss
+max_depth: 24
+min_samples_split: 2
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.6000
+Precision: 0.6923
+Recall: 0.4286
+F1_Score: 0.5294
+ROC_AUC: 0.6090
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.5556    0.7895    0.6522        19
+           1     0.6923    0.4286    0.5294        21
+
+    accuracy                         0.6000        40
+   macro avg     0.6239    0.6090    0.5908        40
+weighted avg     0.6274    0.6000    0.5877        40

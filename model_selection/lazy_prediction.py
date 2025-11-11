@@ -11,7 +11,7 @@ from imblearn.over_sampling import SMOTE
 import joblib
 
 # ---------------- CONFIG ----------------
-DATA_PATH = "./PRDBv3_engineered_v1.json"
+DATA_PATH = "./PRDBv3_engineered_v2.json"
 TARGET_COL = "Binding_affinity"
 CATEGORICAL_LIKE = [
     "Structural_class", "Docking_case", "Flexible_class",
@@ -21,7 +21,7 @@ CATEGORICAL_LIKE = [
 DROP_COLS = []
 USE_SMOTE = False
 RANDOM_STATE = 42
-OUTPUT_DIR = "./output"
+OUTPUT_DIR = "./output_v2"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 # ---------------------------------------
 

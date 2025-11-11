@@ -1,0 +1,10 @@
+=== BEST RIDGE CLASSIFIER MODEL ===
+
+alpha: 10.0
+solver: lsqr
+fit_intercept: True
+Accuracy: 0.6
+Precision: 0.6
+Recall: 0.7142857142857143
+F1_Score: 0.6521739130434783
+ROC_AUC: 0.6791979949874687

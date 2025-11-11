@@ -1,0 +1,25 @@
+=== DecisionTreeClassifier Training Summary ===
+
+Model Settings:
+criterion: gini
+max_depth: 30
+min_samples_split: 3
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.6000
+Precision: 0.6667
+Recall: 0.4762
+F1_Score: 0.5556
+ROC_AUC: 0.5827
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.5600    0.7368    0.6364        19
+           1     0.6667    0.4762    0.5556        21
+
+    accuracy                         0.6000        40
+   macro avg     0.6133    0.6065    0.5960        40
+weighted avg     0.6160    0.6000    0.5939        40

@@ -1,0 +1,9 @@
+=== BEST EXTRA TREES MODEL SUMMARY ===
+
+n_estimators: 100.0
+max_depth: 30.0
+Accuracy: 0.75
+Precision: 0.72
+Recall: 0.8571428571428571
+F1_Score: 0.782608695652174
+ROC_AUC: 0.7756892230576442

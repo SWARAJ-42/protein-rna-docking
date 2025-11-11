@@ -1,0 +1,26 @@
+=== SGDClassifier Training Summary ===
+
+Model Settings:
+loss: log_loss
+penalty: elasticnet
+alpha: 0.001
+max_iter: 2000
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.7000
+Precision: 0.7647
+Recall: 0.6190
+F1_Score: 0.6842
+ROC_AUC: 0.7218
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.6522    0.7895    0.7143        19
+           1     0.7647    0.6190    0.6842        21
+
+    accuracy                         0.7000        40
+   macro avg     0.7084    0.7043    0.6992        40
+weighted avg     0.7113    0.7000    0.6985        40
