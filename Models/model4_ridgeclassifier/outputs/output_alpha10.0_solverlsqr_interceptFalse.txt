@@ -1,0 +1,25 @@
+=== RidgeClassifier Training Summary ===
+
+Model Settings:
+alpha: 10.0
+solver: lsqr
+fit_intercept: False
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.5750
+Precision: 0.5909
+Recall: 0.6190
+F1_Score: 0.6047
+ROC_AUC: 0.6867
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.5556    0.5263    0.5405        19
+           1     0.5909    0.6190    0.6047        21
+
+    accuracy                         0.5750        40
+   macro avg     0.5732    0.5727    0.5726        40
+weighted avg     0.5741    0.5750    0.5742        40

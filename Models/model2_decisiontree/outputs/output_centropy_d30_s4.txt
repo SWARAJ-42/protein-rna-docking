@@ -1,0 +1,25 @@
+=== DecisionTreeClassifier Training Summary ===
+
+Model Settings:
+criterion: entropy
+max_depth: 30
+min_samples_split: 4
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.6500
+Precision: 0.6842
+Recall: 0.6190
+F1_Score: 0.6500
+ROC_AUC: 0.6441
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.6190    0.6842    0.6500        19
+           1     0.6842    0.6190    0.6500        21
+
+    accuracy                         0.6500        40
+   macro avg     0.6516    0.6516    0.6500        40
+weighted avg     0.6533    0.6500    0.6500        40

@@ -1,0 +1,11 @@
+=== BEST LGBM CLASSIFIER MODEL ===
+
+num_leaves: 15.0
+max_depth: 5.0
+learning_rate: 0.01
+n_estimators: 100.0
+Accuracy: 0.625
+Precision: 0.625
+Recall: 0.7142857142857143
+F1_Score: 0.6666666666666666
+ROC_AUC: 0.6328320802005012

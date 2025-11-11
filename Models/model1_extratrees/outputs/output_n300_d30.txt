@@ -1,0 +1,24 @@
+=== ExtraTreesClassifier Training Summary ===
+
+Model Settings:
+n_estimators: 300
+max_depth: 30
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.7000
+Precision: 0.6800
+Recall: 0.8095
+F1_Score: 0.7391
+ROC_AUC: 0.7218
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.7333    0.5789    0.6471        19
+           1     0.6800    0.8095    0.7391        21
+
+    accuracy                         0.7000        40
+   macro avg     0.7067    0.6942    0.6931        40
+weighted avg     0.7053    0.7000    0.6954        40

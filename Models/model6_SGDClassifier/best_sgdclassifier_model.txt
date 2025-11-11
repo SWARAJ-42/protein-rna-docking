@@ -1,0 +1,11 @@
+=== BEST SGD CLASSIFIER MODEL ===
+
+loss: log_loss
+penalty: l1
+alpha: 0.001
+max_iter: 1000
+Accuracy: 0.65
+Precision: 0.6296296296296297
+Recall: 0.8095238095238095
+F1_Score: 0.7083333333333334
+ROC_AUC: 0.7481203007518797

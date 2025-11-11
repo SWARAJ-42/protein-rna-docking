@@ -1,0 +1,26 @@
+=== LGBMClassifier Training Summary ===
+
+Model Settings:
+num_leaves: 15
+max_depth: 10
+learning_rate: 0.01
+n_estimators: 100
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.6250
+Precision: 0.6250
+Recall: 0.7143
+F1_Score: 0.6667
+ROC_AUC: 0.6328
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.6250    0.5263    0.5714        19
+           1     0.6250    0.7143    0.6667        21
+
+    accuracy                         0.6250        40
+   macro avg     0.6250    0.6203    0.6190        40
+weighted avg     0.6250    0.6250    0.6214        40

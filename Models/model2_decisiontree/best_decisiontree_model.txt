@@ -1,0 +1,10 @@
+=== BEST DECISION TREE MODEL SUMMARY ===
+
+criterion: entropy
+max_depth: 12
+min_samples_split: 5
+Accuracy: 0.7
+Precision: 0.7368421052631579
+Recall: 0.6666666666666666
+F1_Score: 0.7
+ROC_AUC: 0.6867167919799498
