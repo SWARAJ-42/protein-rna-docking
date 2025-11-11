@@ -1,0 +1,24 @@
+=== NearestCentroid Training Summary ===
+
+Model Settings:
+metric: manhattan
+shrink_threshold: None
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.4500
+Precision: 0.4667
+Recall: 0.3333
+F1_Score: 0.3889
+ROC_AUC: nan
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.4400    0.5789    0.5000        19
+           1     0.4667    0.3333    0.3889        21
+
+    accuracy                         0.4500        40
+   macro avg     0.4533    0.4561    0.4444        40
+weighted avg     0.4540    0.4500    0.4417        40

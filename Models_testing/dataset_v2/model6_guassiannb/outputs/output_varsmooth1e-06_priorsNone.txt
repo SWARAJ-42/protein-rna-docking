@@ -1,0 +1,24 @@
+=== GaussianNB Training Summary ===
+
+Model Settings:
+var_smoothing: 1e-06
+priors: None
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.6250
+Precision: 0.8000
+Recall: 0.3810
+F1_Score: 0.5161
+ROC_AUC: 0.7093
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.5667    0.8947    0.6939        19
+           1     0.8000    0.3810    0.5161        21
+
+    accuracy                         0.6250        40
+   macro avg     0.6833    0.6378    0.6050        40
+weighted avg     0.6892    0.6250    0.6006        40

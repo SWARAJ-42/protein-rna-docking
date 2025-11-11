@@ -1,0 +1,9 @@
+=== BEST NEAREST CENTROID MODEL ===
+
+metric: euclidean
+shrink_threshold: 1.0
+Accuracy: 0.625
+Precision: 0.6071428571428571
+Recall: 0.8095238095238095
+F1_Score: 0.6938775510204082
+ROC_AUC: nan

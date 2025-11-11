@@ -1,0 +1,25 @@
+=== Support Vector Classifier Training Summary ===
+
+Model Settings:
+kernel: poly
+C: 0.1
+gamma: scale
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.5500
+Precision: 0.5385
+Recall: 1.0000
+F1_Score: 0.7000
+ROC_AUC: 0.2857
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     1.0000    0.0526    0.1000        19
+           1     0.5385    1.0000    0.7000        21
+
+    accuracy                         0.5500        40
+   macro avg     0.7692    0.5263    0.4000        40
+weighted avg     0.7577    0.5500    0.4150        40

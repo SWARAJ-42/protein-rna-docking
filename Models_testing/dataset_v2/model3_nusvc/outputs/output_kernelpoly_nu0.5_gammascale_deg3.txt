@@ -1,0 +1,26 @@
+=== NuSVC Training Summary ===
+
+Model Settings:
+kernel: poly
+nu: 0.5
+gamma: scale
+degree: 3
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.5750
+Precision: 0.5714
+Recall: 0.7619
+F1_Score: 0.6531
+ROC_AUC: 0.2982
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.5833    0.3684    0.4516        19
+           1     0.5714    0.7619    0.6531        21
+
+    accuracy                         0.5750        40
+   macro avg     0.5774    0.5652    0.5523        40
+weighted avg     0.5771    0.5750    0.5574        40

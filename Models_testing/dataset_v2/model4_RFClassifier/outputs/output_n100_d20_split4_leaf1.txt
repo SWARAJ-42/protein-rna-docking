@@ -1,0 +1,26 @@
+=== RandomForestClassifier Training Summary ===
+
+Model Settings:
+n_estimators: 100
+max_depth: 20
+min_samples_split: 4
+min_samples_leaf: 1
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.7000
+Precision: 0.6667
+Recall: 0.8571
+F1_Score: 0.7500
+ROC_AUC: 0.7393
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.7692    0.5263    0.6250        19
+           1     0.6667    0.8571    0.7500        21
+
+    accuracy                         0.7000        40
+   macro avg     0.7179    0.6917    0.6875        40
+weighted avg     0.7154    0.7000    0.6906        40

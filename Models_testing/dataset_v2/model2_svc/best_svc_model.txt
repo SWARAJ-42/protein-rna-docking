@@ -1,0 +1,10 @@
+=== BEST SVC MODEL ===
+
+kernel: rbf
+C: 1.0
+gamma: auto
+Accuracy: 0.7
+Precision: 0.6551724137931034
+Recall: 0.9047619047619048
+F1_Score: 0.76
+ROC_AUC: 0.6541353383458647

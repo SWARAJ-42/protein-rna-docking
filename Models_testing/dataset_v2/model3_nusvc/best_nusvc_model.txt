@@ -1,0 +1,11 @@
+=== BEST NuSVC MODEL ===
+
+kernel: rbf
+nu: 0.25
+gamma: scale
+degree: 2
+Accuracy: 0.725
+Precision: 0.7083333333333334
+Recall: 0.8095238095238095
+F1_Score: 0.7555555555555555
+ROC_AUC: 0.26315789473684215

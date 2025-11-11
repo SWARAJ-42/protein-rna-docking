@@ -1,0 +1,25 @@
+=== Support Vector Classifier Training Summary ===
+
+Model Settings:
+kernel: rbf
+C: 0.1
+gamma: auto
+test_size: 0.2
+random_state: 42
+
+=== Evaluation Metrics ===
+Accuracy: 0.5250
+Precision: 0.5250
+Recall: 1.0000
+F1_Score: 0.6885
+ROC_AUC: 0.3409
+
+--- Detailed Classification Report ---
+              precision    recall  f1-score   support
+
+           0     0.0000    0.0000    0.0000        19
+           1     0.5250    1.0000    0.6885        21
+
+    accuracy                         0.5250        40
+   macro avg     0.2625    0.5000    0.3443        40
+weighted avg     0.2756    0.5250    0.3615        40
